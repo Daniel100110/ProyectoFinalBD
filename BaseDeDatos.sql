@@ -1,5 +1,5 @@
-create database BaseDeDatos;
-use BaseDeDatos;
+create database SoftwareDeDefensas;
+use SoftwareDeDefensa;
 
 create table prisiones(
 id_prision int primary key not null identity(1,1),
