@@ -94,7 +94,20 @@ select * from personal;
 select * from puertasHabitaciones;
 select * from puertasCeldas;
 
-insert into prisiones ()
+insert into tipoEdificios('Prision','Activo');
+insert into edificios('Prisión de Tijuana','Activo');
+insert into secciones('A','Activo');
+insert into pisos('Piso 1','Activo');
+insert into pasillos('Pasillo izquierdo','Activo');
+insert into tipoHabitaciones('Administrativo','Activo');
+insert into habitaciones('Reuniones y exposiciones','Activo');
+insert into tipo_celda('Peligroso','Activo');
+insert into celdas('A-001','Activo');
+insert into prisioneros('Daniel Ibarra','Activo');
+insert into personal('Laura Abundiz','Activo');
+insert into puertasHabitaciones('Puerta_h_01_A','Activo');
+insert into puertasCeldas('Puerta_c_01_A','Activo');
+
 
 
 
