@@ -84,3 +84,21 @@ nom_puertaC varchar(50),
 id_celda int foreign key references celdas(id_celda) on delete cascade,
 status_puertaC varchar(30)
 );
+
+
+/*Triggers*/
+create trigger insertTriggerZonaHoraria on zonaHoraria after insert as insert into historial values ('Insert', 'Se guardo un registro en Zona Horaria',suser_name(), sysdatetime())
+create trigger updateTriggerZonaHoraria on zonaHoraria after update as insert into historial values ('Update', 'Se actualizo un registro en Zona Horaria',suser_name(), sysdatetime())
+create trigger deleteTriggerZonaHoraria on zonaHoraria after delete as insert into historial values ('Delete', 'Se borro un registro en Zona Horaria',suser_name(), sysdatetime())
+
+/*---*/
+create trigger createTableTrigger on database for create_table as begin insert into historial values ('create_table', 'Se creo una tabla',SUSER_NAME(), SYSDATETIME()) end
+create trigger dropTableTrigger on database for create_table as begin insert into historial values ('drop_table', 'Se borro una tabla',SUSER_NAME(), SYSDATETIME()) end
+create trigger createIndexTrigger on database for create_table as begin insert into historial values ('create_index', 'Se creo un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
+create trigger alterIndexTrigger on database for create_table as begin insert into historial values ('alter_index', 'Se cambio un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
+create trigger dropIndexTrigger on database for create_table as begin insert into historial values ('drop_index', 'Se borro un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
+
+
+
+
+
