@@ -1,11 +1,6 @@
 create database SoftwareDeDefensas;
 use SoftwareDeDefensa;
 
-create table prisiones(
-id_prision int primary key not null identity(1,1),
-nom_prision varchar(50),
-status_prision varchar(30)
-);
 create table tipoEdificios(
 id_tipo_edificio int primary key not null identity(1,1),
 nom_tipo_edificio varchar(50),
@@ -84,3 +79,24 @@ nom_puertaC varchar(50),
 id_celda int foreign key references celdas(id_celda) on delete cascade,
 status_puertaC varchar(30)
 );
+
+select * from tipoEdificios;
+select * from edificios;
+select * from secciones;
+select * from pisos;
+select * from pasillos;
+select * from tipoHabitaciones;
+select * from habitaciones;
+select * from tipo_celda;
+select * from celdas;
+select * from prisioneros;
+select * from personal;
+select * from puertasHabitaciones;
+select * from puertasCeldas;
+
+insert into prisiones ()
+
+
+
+
+
