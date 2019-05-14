@@ -1,4 +1,4 @@
-create database SoftwareDeDefensas;
+create database SoftwareDeDefensa;
 use SoftwareDeDefensa;
 
 create table tipoEdificios(
@@ -10,7 +10,6 @@ create table edificios(
 id_edificio int primary key not null identity(1,1),
 nom_edificio varchar(50),
 id_tipo_edificio int foreign key references tipoEdificios(id_tipo_edificio) on delete cascade,
-id_prision int foreign key references prisiones(id_prision),
 status_edificio varchar(30)
 );
 create table secciones(
@@ -94,19 +93,19 @@ select * from personal;
 select * from puertasHabitaciones;
 select * from puertasCeldas;
 
-insert into tipoEdificios('Prision','Activo');
-insert into edificios('Prisión de Tijuana','Activo');
-insert into secciones('A','Activo');
-insert into pisos('Piso 1','Activo');
-insert into pasillos('Pasillo izquierdo','Activo');
-insert into tipoHabitaciones('Administrativo','Activo');
-insert into habitaciones('Reuniones y exposiciones','Activo');
-insert into tipo_celda('Peligroso','Activo');
-insert into celdas('A-001','Activo');
-insert into prisioneros('Daniel Ibarra','Activo');
-insert into personal('Laura Abundiz','Activo');
-insert into puertasHabitaciones('Puerta_h_01_A','Activo');
-insert into puertasCeldas('Puerta_c_01_A','Activo');
+insert into tipoEdificios values('Prision','Activo');
+insert into edificios values('Prisión de Tijuana',1,'Activo');
+insert into secciones values('A',1,'Activo');
+insert into pisos values('Piso 1',1,'Activo');
+insert into pasillos values('Pasillo izquierdo',2,'Activo');
+insert into tipoHabitaciones values('Administrativo','Activo');
+insert into habitaciones values('Reuniones y exposiciones',1,3,'Activo');
+insert into tipo_celda values('Peligroso','Activo');
+insert into celdas values('A-001',1,3,'Activo');
+insert into prisioneros values('Daniel Ibarra',1,'Activo');
+insert into personal values('Laura Abundiz',1,'Activo');
+insert into puertasHabitaciones values('Puerta_h_01_A',1,'Activo');
+insert into puertasCeldas values('Puerta_c_01_A',1,'Activo');
 
 
 
