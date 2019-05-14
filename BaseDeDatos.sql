@@ -1,11 +1,6 @@
-create database SoftwareDeDefensas;
+create database SoftwareDeDefensa;
 use SoftwareDeDefensa;
 
-create table prisiones(
-id_prision int primary key not null identity(1,1),
-nom_prision varchar(50),
-status_prision varchar(30)
-);
 create table tipoEdificios(
 id_tipo_edificio int primary key not null identity(1,1),
 nom_tipo_edificio varchar(50),
@@ -15,7 +10,6 @@ create table edificios(
 id_edificio int primary key not null identity(1,1),
 nom_edificio varchar(50),
 id_tipo_edificio int foreign key references tipoEdificios(id_tipo_edificio) on delete cascade,
-id_prision int foreign key references prisiones(id_prision),
 status_edificio varchar(30)
 );
 create table secciones(
@@ -85,6 +79,7 @@ id_celda int foreign key references celdas(id_celda) on delete cascade,
 status_puertaC varchar(30)
 );
 
+<<<<<<< HEAD
 create table historialSistema (
 id_historial int primary key not null identity(1,1),
 accion varchar(50) not null,
@@ -130,6 +125,36 @@ create trigger dropTableTrigger on database for create_table as begin insert int
 create trigger createIndexTrigger on database for create_table as begin insert into historialSistema values ('create_index', 'Se creo un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
 create trigger alterIndexTrigger on database for create_table as begin insert into historialSistema values ('alter_index', 'Se cambio un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
 create trigger dropIndexTrigger on database for create_table as begin insert into historialSistema values ('drop_index', 'Se borro un indice en una tabla',SUSER_NAME(), SYSDATETIME()) end
+=======
+select * from tipoEdificios;
+select * from edificios;
+select * from secciones;
+select * from pisos;
+select * from pasillos;
+select * from tipoHabitaciones;
+select * from habitaciones;
+select * from tipo_celda;
+select * from celdas;
+select * from prisioneros;
+select * from personal;
+select * from puertasHabitaciones;
+select * from puertasCeldas;
+
+insert into tipoEdificios values('Prision','Activo');
+insert into edificios values('Prisión de Tijuana',1,'Activo');
+insert into secciones values('A',1,'Activo');
+insert into pisos values('Piso 1',1,'Activo');
+insert into pasillos values('Pasillo izquierdo',2,'Activo');
+insert into tipoHabitaciones values('Administrativo','Activo');
+insert into habitaciones values('Reuniones y exposiciones',1,3,'Activo');
+insert into tipo_celda values('Peligroso','Activo');
+insert into celdas values('A-001',1,3,'Activo');
+insert into prisioneros values('Daniel Ibarra',1,'Activo');
+insert into personal values('Laura Abundiz',1,'Activo');
+insert into puertasHabitaciones values('Puerta_h_01_A',1,'Activo');
+insert into puertasCeldas values('Puerta_c_01_A',1,'Activo');
+
+>>>>>>> master
 
 
 
