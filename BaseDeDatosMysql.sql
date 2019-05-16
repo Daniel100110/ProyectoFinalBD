@@ -68,13 +68,13 @@ id_tipo_celda int,
 id_pasillo int,
 status_celda varchar(30),
 PRIMARY KEY (id_celda),
-FOREIGN KEY (id_tipo_celda) REFERENCES tipo_celda(id_tipo_celda),
+FOREIGN KEY (id_tipo_celda) REFERENCES tipoCelda(id_tipo_celda),
 FOREIGN KEY (id_pasillo) REFERENCES pasillos(id_pasillo)
 );
 create table prisioneros(
 id_prisionero int not null,
 nom_prisionero varchar(50),
-no_celda int,
+id_celda int,
 status_prisionero varchar(30),
 PRIMARY KEY (id_prisionero),
 FOREIGN KEY (id_celda) REFERENCES celdas(id_celda)
