@@ -98,7 +98,7 @@ FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id_habitacion)
 create table puertasCeldas(
 id_puertaC int not null,
 nom_puertaC varchar(50),
-id_celda int.
+id_celda int,
 status_puertaC varchar(30),
 PRIMARY KEY (id_puertaC),
 FOREIGN KEY (id_celda) REFERENCES celdas(id_celda)
